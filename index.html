@@ -1,19 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lasagne Boys</title>
+    <link rel="stylesheet" href="styles/default.css">
 </head>
 <body>
+    <header>
+        <img src="images/logo.svg" alt="Lasagne Boys Logo" id="logo">
+    </header>
+    
+    <div class="about-section">
+        <h2>About us 🍽️</h2>
+        <p>We're boys and we make lasagne, it's that simple! 👨‍🍳👨‍🍳👨‍🍳</p>
+        <p>What do you, me, and Garfield have in common? Correct - We all love LASAGNE! 🧡😻</p>
+        <p>We've seen a gap in the market for beautifully made lasagne with the freshest pasta and the best banter 👌🍝</p>
+        <p>3 boys with 1 dream... to make the best goddamn lasagne in London 🌟🏙️</p>
+        <p>We are three friends from uni who turned our passion for food and cooking into a business.</p>
+        <p>Now you too can get some of our fresh, well-sourced, carefully prepared, and comforting lasagne. 🤝🍅🧀</p>
+    </div>
+    
+    <div class="gallery" id="gallery1">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <img src="images/img_1.jpg" alt="Image 1">
+            <img src="images/img_2.jpg" alt="Image 2">
+            <img src="images/img_3.jpg" alt="Image 3">
+            <img src="images/img_4.jpg" alt="Image 4">
+            <img src="images/img_5.jpg" alt="Image 5">
+            <img src="images/img_6.jpg" alt="Image 6">
+            <img src="images/img_7.jpg" alt="Image 7">
+            <img src="images/img_8.jpg" alt="Image 8">
+            <img src="images/img_9.jpg" alt="Image 9">
+            <img src="images/img_10.jpg" alt="Image 10">
+            <img src="images/img_11.jpg" alt="Image 11">
+            <img src="images/img_12.jpg" alt="Image 12">
+        </div>
+    </div>
 
-<h1>Lasagne Boys</h1>
-<p>Website Coming Soon</p>
-
+    <div class="gallery" id="gallery2">
+        <div class="gallery-container">
+            <img src="images/img_13.jpg" alt="Image 13">
+            <img src="images/img_14.jpg" alt="Image 14">
+            <img src="images/img_15.jpg" alt="Image 15">
+            <img src="images/img_16.jpg" alt="Image 16">
+            <img src="images/img_17.jpg" alt="Image 17">
+            <img src="images/img_18.jpg" alt="Image 18">
+            <img src="images/img_19.jpg" alt="Image 19">
+            <img src="images/img_20.jpg" alt="Image 20">
+            <img src="images/img_21.jpg" alt="Image 21">
+            <img src="images/img_22.jpg" alt="Image 22">
+            <img src="images/img_23.jpg" alt="Image 23">
+            <img src="images/img_24.jpg" alt="Image 24">
+        </div>
+    </div>
+    
+    <div class="contact-section">
+        <h2>Contact us</h2>
+        <p>Got any questions? Feedback? Love letters?</p>
+        <p>Email us at <a href="mailto:hello@lasagneboys.com">hello@lasagneboys.com</a></p>
+    </div>
+    
+    <script src="scripts/gallery.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            moveGalleryImages('gallery1', 'right');
+            moveGalleryImages('gallery2', 'left');
+        });
+    </script>
+    
+    <footer>
+        <h2>Live, Laugh, Lasagne.</h2>
+        <p>&copy; 2024</p>
+        <p>Lasagne Boys Limited is a company registered in England and Wales.</p>
+    </footer>
 </body>
 </html>
