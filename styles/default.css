@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ultra&family=Roboto&display=swap');
 
 body {
     font-family: 'Ultra', serif;
@@ -36,8 +36,9 @@ h2 {
 }
 
 p {
-    color: #A3593F !important;
-    text-align: center; /* Center the text */
+    font-family: 'Roboto';
+    color: #A3593F;
+    text-align: center;
 }
 
 .gallery,
