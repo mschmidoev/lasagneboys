@@ -8,7 +8,7 @@ body {
 
 h1 {
     font-family: "Ultra", sans-serif;
-    font-size: 72px;
+    font-size: 48px;
     color: #BC0E0E;
     width: 100%;
     transition: font-size 0.5s;
@@ -17,10 +17,10 @@ h1 {
 
 #logo {
     display: block;
-    margin: 0 auto; /* Center the logo horizontally */
+    margin: 0 auto;
     max-width: 100%;
     height: auto;
-    transition: max-width 0.5s; /* Add a smooth transition effect */
+    transition: max-width 0.5s;
 }
 
 #header {
@@ -32,7 +32,7 @@ h2 {
     font-family: "Ultra", sans-serif;
     font-weight: normal;
     color: #5D1B24;
-    text-align: center; /* Center the text */
+    text-align: center;
 }
 
 p {
@@ -50,7 +50,7 @@ p {
     box-sizing: border-box;
     color: #5D1B24;
     font-family: "Ultra", sans-serif;
-    text-align: center; /* Center the text */
+    text-align: center;
 }
 
 body {
@@ -64,7 +64,7 @@ body {
     height: 200px;
     color: #5D1B24;
     font-family: "Ultra", sans-serif;
-    text-align: center; /* Center the text */
+    text-align: center;
 }
 
 .footer-section p {
@@ -78,7 +78,7 @@ body {
 .gallery-container {
     display: flex;
     transition: transform 0.5s ease;
-    justify-content: center; /* Center the content */
+    justify-content: center;
 }
 
 .gallery img {
