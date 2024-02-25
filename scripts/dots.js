@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const dotNavigation = document.querySelector('.dot-navigation');
     const dots = document.querySelectorAll('.dot');
-    const expandingDot = document.querySelector('.expanding-dot');
     const galleryContainer = document.querySelector('.gallery.carousel');
 
     // Calculate dot scroll amount
@@ -19,11 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Update expanding dot position on scroll
-    dotNavigation.addEventListener('scroll', () => {
-        const scrollPercentage = dotNavigation.scrollLeft / (dotNavigation.scrollWidth - dotNavigation.clientWidth);
-        const newPosition = scrollPercentage * (dotNavigation.clientWidth - expandingDot.clientWidth); // Calculate new position for the expanding dot
-        expandingDot.style.left = `${newPosition}px`; // Set the left position of the expanding dot
+    // Update active dot based on scroll position
+    galleryContainer.addEventListener('scroll', () => {
+        const scrollPercentage = galleryContainer.scrollLeft / (galleryContainer.scrollWidth - galleryContainer.clientWidth);
+        const activeDotIndex = Math.round(scrollPercentage * (dots.length - 1));
+        
+        // Update active dot
+        updateActiveDot(activeDotIndex);
     });
 
     // Function to update active dot
@@ -36,4 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+    
+    // Initially update active dot for first item
+    updateActiveDot(0);
 });

@@ -1,105 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Ultra&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&display=swap');
 
 body {
-    font-family: 'Ultra', serif;
-    background-color: #FAECC6;
     margin: 0;
 }
 
-h1 {
-    font-family: "Ultra", sans-serif;
-    font-size: 48px;
-    color: #BC0E0E;
+header {
+    background-color: #FFF0D7;
     width: 100%;
-    transition: font-size 0.5s;
-    text-align: center;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #logo {
-    display: block;
-    margin: 0 auto;
     max-width: 100%;
     height: auto;
-    transition: max-width 0.5s;
-}
-
-#header {
-    margin-bottom: 20px;
-    transition: font-size 0.5s;
-}
-
-h2 {
-    font-family: "Ultra", sans-serif;
-    font-weight: normal;
-    color: #5D1B24;
-    text-align: center;
 }
 
 p {
-    font-family: 'Roboto';
-    color: #A3593F;
-    text-align: center;
+    line-height: 1.5;
 }
 
-.gallery,
-.about-section,
-.instagram-embed,
-.contact-section {
-    margin: 0 20px;
+footer {
+    background-color: #FFF0D7;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.main-content {
+    background-color: #FFF4E2;
     padding: 20px;
-    box-sizing: border-box;
-    color: #5D1B24;
-    font-family: "Ultra", sans-serif;
-    text-align: center;
-}
-
-body {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.footer-section {
-    margin-top: auto;
-    height: 200px;
-    color: #5D1B24;
-    font-family: "Ultra", sans-serif;
-    text-align: center;
-}
-
-.footer-section p {
-    color: #777520;
+    justify-content: center;
+    align-items: center;
 }
 
 .gallery {
-    overflow: hidden;
-}
-
-.gallery-container {
-    display: flex;
-    transition: transform 0.5s ease;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .gallery img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
 }
 
-/* Styling for links */
-a {
-    color: #777520;
-    text-decoration: none;
+.split-layout {
+    display: flex;
+    align-items: flex-start;
 }
 
-a:hover {
-    text-decoration: underline;
+.about-section,
+.contact-section {
+    flex: 1;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
-a:visited {
-    color: #777520;
+@media screen and (max-width: 768px) {
+    header, footer {
+        height: 10vh;
+    }
+    .main-content {
+        padding: 10px;
+    }
+    .about-section,
+    .contact-section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header, footer {
+        height: 8vh;
+    }
+    .main-content {
+        padding: 5px;
+    }
+    .about-section,
+    .contact-section {
+        width: 100%;
+    }
+}
+
+.section-title {
+    font-family: Chewy, cursive;
+    font-size: 32px;
+    color: #EC4D3C;
+}
+
+footer p {
+    font-family: Tinos, serif;
+    font-size: 16px;
+    color: #5D1B24;
+}
+
+footer h1 {
+    font-family: Chewy, cursive;
+    font-size: 32px;
+    color: #EC4D3C;
+    margin-top: 10px;
 }
 
 .lightbox {
@@ -109,31 +116,171 @@ a:visited {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 .lightbox img {
-    display: block;
-    margin: 50px auto; /* Adjust the margin as needed */
-    max-width: 80%;
-    max-height: 80%;
-}
-
-/* Add this to your CSS */
-.lightbox {
-    /* Existing styles */
-    position: fixed;
-    justify-content: center;
-    align-items: center;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
 }
 
 .close-button {
     position: absolute;
     top: 10px;
-    left: 10px;
-    font-size: 20px;
+    right: 10px;
     background: none;
     border: none;
+    font-size: 20px;
     color: #fff;
     cursor: pointer;
+    z-index: 1000;
+}
+
+.carousel-container {
+    position: relative;
+    background-color: #FFF4E2;
+    padding: 20px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    height: 100%;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+}
+
+.carousel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.carousel-inner a {
+    flex: 0 0 264px;
+    height: 248px;
+    margin-right: 10px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.carousel-inner a:last-child {
+    margin-right: 0;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.dot-navigation {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FFE5B7;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #EC4D3C;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.image-container {
+    margin-right: 20px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+.image-container img {
+    max-width: 60%;
+    border-radius: 16px;
+    height: auto;
+}
+
+.squiggle {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background-image: url('images/squiggle.svg');
+}
+
+.squiggle.top-right {
+    top: 0;
+    right: 0;
+}
+
+.squiggle.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.email-icon,
+.instagram-icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.email-icon {
+    background-image: url('images/email.svg');
+}
+
+.instagram-icon {
+    background-image: url('images/instagram.svg');
+}
+
+.email-button,
+.instagram-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    color: #452C00;
+    font-family: 'Alatsi', sans-serif;
+}
+
+.email-button:hover,
+.instagram-button:hover {
+    text-decoration: underline;
 }
