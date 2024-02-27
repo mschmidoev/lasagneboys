@@ -5,16 +5,19 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(lightbox);
 
     const galleryLinks = document.querySelectorAll('.gallery a');
+    let currentIndex = 0;
 
-    galleryLinks.forEach(function (link) {
+    galleryLinks.forEach(function (link, index) {
         link.addEventListener('click', function (e) {
             e.preventDefault();
+            currentIndex = index;
             openLightbox(this.href, this.querySelector('img').alt);
         });
     });
 
     window.closeLightbox = function () {
         lightbox.style.display = 'none'; // Hide the lightbox
+        document.removeEventListener('keydown', handleKeystroke); // Remove the event listener for keystrokes
     };
 
     lightbox.addEventListener('click', function (e) {
@@ -23,11 +26,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.addEventListener('keydown', function (e) {
+    function handleKeystroke(e) {
         if (e.key === 'Escape') {
             closeLightbox(); // Close the lightbox if escape key is pressed
+        } else if (e.key === 'ArrowRight') {
+            currentIndex = (currentIndex + 1) % galleryLinks.length;
+            openLightbox(galleryLinks[currentIndex].href, galleryLinks[currentIndex].querySelector('img').alt);
+        } else if (e.key === 'ArrowLeft') {
+            currentIndex = (currentIndex - 1 + galleryLinks.length) % galleryLinks.length;
+            openLightbox(galleryLinks[currentIndex].href, galleryLinks[currentIndex].querySelector('img').alt);
         }
-    });
+    }
 
     function openLightbox(imageUrl, imageAlt) {
         const lightboxContent = `
@@ -37,5 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         lightbox.innerHTML = lightboxContent;
         lightbox.style.display = 'flex'; // Display the lightbox
+        document.addEventListener('keydown', handleKeystroke); // Add the event listener for keystrokes
     }
 });
